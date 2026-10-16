@@ -1,83 +1,25 @@
-# 🐾 Missão - Tamagotchi 
+# 🐾 Projeto Tamagotchi – Animais Virtuais
 
-![Exemplo de Tela](docs/screen.png)
+Esse projeto foi desenvolvido para uma atividade da faculdade, com base nos conteúdos que aprendemos em aula sobre programação orientada a objetos em Java.
 
-Neste exercício, você vai criar um mini-jogo estilo Tamagotchi, onde o usuário pode interagir com diferentes bichinhos virtuais.
+A proposta foi criar um jogo inspirado no Tamagotchi, em que o jogador pode cuidar de três animais virtuais: um gato, um cachorro e um dragão. Cada animal possui seus próprios níveis de energia, fome e felicidade, que mudam de acordo com as ações realizadas durante o jogo.
 
-O foco do exercício é praticar os conceitos de:
+## 💻 Como foi desenvolvido
 
-- ✅ Classe abstrata
-- ✅ Herança
-- ✅ Sobrescrita de métodos (`@Override`)
-- ✅ Organização de código orientado a objetos
+Comecei criando a classe abstrata `Animal`, que reúne as características e ações em comum entre os animais. Depois, criei as classes `Gato`, `Cachorro` e `Dragao`, que herdam essa estrutura e possuem comportamentos específicos.
 
----
+Durante o desenvolvimento, coloquei em prática conceitos de programação orientada a objetos, como herança, classes abstratas e sobrescrita de métodos usando `@Override`.
 
-## 🎯 Objetivo
+Cada animal tem suas próprias características durante o jogo. O gato, por exemplo, perde menos energia ao brincar, enquanto o cachorro é mais agitado e o dragão gasta ainda mais energia. Também implementei ações como comer, dormir e avançar o turno, que alteram os atributos dos animais.
 
-Você deve modelar um sistema em Java onde diferentes **animais virtuais** (Gato, Cachorro e Dragão) possuem comportamentos distintos quando realizam as ações:
+Outro ponto importante foi controlar os valores de energia, fome e felicidade para que permanecessem entre 0 e 100, seguindo as regras propostas na atividade.
 
-- **Brincar**
-- **Comer**
-- **Dormir**
-- **Turno** (passagem do tempo)
+## 🎮 Interface do jogo
 
----
+Além da lógica desenvolvida em Java, o projeto conta com uma interface visual para facilitar a interação com os animais. Nela, é possível visualizar os bichinhos, acompanhar seus atributos e utilizar os botões para realizar ações como brincar, comer e dormir.
 
-## 🧩 Estrutura do projeto
+A interface permite acompanhar as mudanças no estado de cada animal conforme as ações são realizadas, tornando o jogo mais interativo e fácil de entender.
 
-Crie as seguintes classes dentro do pacote `model`:
+## 📚 O que aprendi
 
-### 📁 `model/Animal.java` (classe abstrata)
-
-Esta classe deve conter:
-
-- Atributos comuns:
-  - `energia`
-  - `fome`
-  - `felicidade`
-- Métodos `gets()`
-- Métodos abstratos:
-  - `brincar()`
-  - `comer()`
-  - `dormir()`
-  - `turno()`
-
----
-
-### 🐱 `model/Gato.java`
-### 🐶 `model/Cachorro.java`
-### 🐲 `model/Dragao.java`
-
-Todas devem estender `Animal` e implementar os métodos com **comportamentos próprios**. Veja abaixo as regras específicas de cada uma.
-
----
-
-## 📋 Regras de comportamento por animal
-
-| Ação     | Gato 🐱                       | Cachorro 🐶                     | Dragão 🐲                             |
-|----------|-------------------------------|----------------------------------|----------------------------------------|
-| Brincar  | +10 felicidade, -5 energia, +5 fome  | +15 felicidade, -10 energia, +10 fome | +12 felicidade, -15 energia, +15 fome   |
-| Comer    | -15 fome, +10 energia         | -20 fome, +15 energia           | -30 fome, +20 energia                 |
-| Dormir   | +20 energia, +5 fome          | +15 energia, +10 fome           | +10 energia, +10 fome                 |
-| Turno    | -5 energia, +5 fome, -3 felicidade | -10 energia, +10 fome, -5 felicidade | -15 energia, +10 fome, -7 felicidade    |
-
----
-
-## 🎓 Justificativas
-
-Essas diferenças refletem o **perfil comportamental de cada animal**:
-
-- **Gato**: animal mais calmo, brinca moderadamente e dorme bastante. Gasta menos energia e tem fome controlada.
-- **Cachorro**: agitado, sociável e ativo. Brinca intensamente, se alimenta bem e precisa de mais cuidado com energia.
-- **Dragão**: criatura mágica e poderosa. Suas ações são intensas, exigem mais energia e comida. É exigente e precisa de atenção constante.
-
----
-
-## ✅ Regras gerais dos atributos
-
-- Todos os atributos devem variar de **0 a 100**.
-
----
-
-Bom código! 🚀
+Com esse projeto, pude praticar os conceitos de programação orientada a objetos e entender melhor como utilizar classes, herança, métodos e atributos para organizar o código. Também foi uma oportunidade de aplicar a lógica de programação na criação de um jogo com regras e comportamentos diferentes para cada animal.
