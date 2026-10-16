@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Tamagotchi</title>
+</head>
+
+<body class="bg-slate-900 text-slate-200">
+
+    <main class="flex h-screen items-center flex-wrap justify-center gap-4 p-4">
+
+        <!-- ===== Card do Gato ===== -->
+        <div class="w-[400px] rounded overflow-hidden bg-slate-700 shadow-lg">
+            <img src="images/gato.png" alt="" class="w-full">
+            <div class="p-4">
+                <div class="mb-4">
+                    <label class="flex items-center gap-2 mb-1 font-semibold text-sm text-slate-300">
+                        <span>⚡</span>
+                        <span>Energia</span>
+                    </label>
+                    <div class="w-full bg-slate-800 rounded-full h-2">
+                        <div class="bg-emerald-400 h-2 rounded-full" th:style="'width: '+ ${gato.energia} + '%'"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="flex items-center gap-2 mb-1 font-semibold text-sm text-slate-300">
+                        <span>😊</span>
+                        <span>Felicidade</span>
+                    </label>
+                    <div class="w-full bg-slate-800 rounded-full h-2">
+                        <div class="bg-amber-300 h-2 rounded-full" th:style="'width: '+ ${gato.felicidade} + '%'"></div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="flex items-center gap-2 mb-1 font-semibold text-sm text-slate-300">
+                        <span>🍗</span>
+                        <span>Fome</span>
+                    </label>
+                    <div class="w-full bg-slate-800 rounded-full h-2">
+                        <div class="bg-rose-400 h-2 rounded-full" th:style="'width: '+ ${gato.fome} + '%'"></div>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 mt-6">
+                    <form action="/gato/brincar" method="post">
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-amber-300 hover:bg-amber-400 text-amber-900 font-semibold rounded-2xl shadow">
+                            🎾 Brincar
+                        </button>
+                    </form>
+
+                    <form action="/gato/comer" method="post">
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-rose-400 hover:bg-rose-500 text-rose-100 font-semibold rounded-2xl shadow">
+                            🍖 Comer
+                        </button>
+                    </form>
+
+                    <form action="/gato/dormir" method="post">
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-emerald-400 hover:bg-emerald-500 text-emerald-100 font-semibold rounded-2xl shadow">
+                            😴 Dormir
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===== Card do Cachorro ===== -->
+        <div class="w-[400px] rounded overflow-hidden bg-slate-700 shadow-lg">
+            <img src="images/cachorro.png" alt="" class="w-full">
+            <div class="p-4">
+                <div class="mb-4">
+                    <label class="flex items-center gap-2 mb-1 font-semibold text-sm text-slate-300">
+                        <span>⚡</span>
+                        <span>Energia</span>
+                    </label>
+                    <div class="w-full bg-slate-800 rounded-full h-2">
+                        <div class="bg-emerald-400 h-2 rounded-full" th:style="'width: '+ ${cachorro.energia} + '%'">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="flex items-center gap-2 mb-1 font-semibold text-sm text-slate-300">
+                        <span>😊</span>
+                        <span>Felicidade</span>
+                    </label>
+                    <div class="w-full bg-slate-800 rounded-full h-2">
+                        <div class="bg-amber-300 h-2 rounded-full" th:style="'width: '+ ${cachorro.felicidade} + '%'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="flex items-center gap-2 mb-1 font-semibold text-sm text-slate-300">
+                        <span>🍗</span>
+                        <span>Fome</span>
+                    </label>
+                    <div class="w-full bg-slate-800 rounded-full h-2">
+                        <div class="bg-rose-400 h-2 rounded-full" th:style="'width: '+ ${cachorro.fome} + '%'"></div>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 mt-6">
+                    <form action="/cachorro/brincar" method="post">
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-amber-300 hover:bg-amber-400 text-amber-900 font-semibold rounded-2xl shadow">
+                            🎾 Brincar
+                        </button>
+                    </form>
+
+                    <form action="/cachorro/comer" method="post">
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-rose-400 hover:bg-rose-500 text-rose-100 font-semibold rounded-2xl shadow">
+                            🍖 Comer
+                        </button>
+                    </form>
+
+                    <form action="/cachorro/dormir" method="post">
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-emerald-400 hover:bg-emerald-500 text-emerald-100 font-semibold rounded-2xl shadow">
+                            😴 Dormir
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===== Card do Dragão ===== -->
+        <div class="w-[400px] rounded overflow-hidden bg-slate-700 shadow-lg">
+            <img src="images/dragao.png" alt="" class="w-full">
+            <div class="p-4">
+                <div class="mb-4">
+                    <label class="flex items-center gap-2 mb-1 font-semibold text-sm text-slate-300">
+                        <span>⚡</span>
+                        <span>Energia</span>
+                    </label>
+                    <div class="w-full bg-slate-800 rounded-full h-2">
+                        <div class="bg-emerald-400 h-2 rounded-full" th:style="'width: '+ ${dragao.energia} + '%'">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="flex items-center gap-2 mb-1 font-semibold text-sm text-slate-300">
+                        <span>😊</span>
+                        <span>Felicidade</span>
+                    </label>
+                    <div class="w-full bg-slate-800 rounded-full h-2">
+                        <div class="bg-amber-300 h-2 rounded-full" th:style="'width: '+ ${dragao.felicidade} + '%'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="flex items-center gap-2 mb-1 font-semibold text-sm text-slate-300">
+                        <span>🍗</span>
+                        <span>Fome</span>
+                    </label>
+                    <div class="w-full bg-slate-800 rounded-full h-2">
+                        <div class="bg-rose-400 h-2 rounded-full" th:style="'width: '+ ${dragao.fome} + '%'"></div>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 mt-6">
+                    <form action="/dragao/brincar" method="post">
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-amber-300 hover:bg-amber-400 text-amber-900 font-semibold rounded-2xl shadow">
+                            🎾 Brincar
+                        </button>
+                    </form>
+
+                    <form action="/dragao/comer" method="post">
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-rose-400 hover:bg-rose-500 text-rose-100 font-semibold rounded-2xl shadow">
+                            🍖 Comer
+                        </button>
+                    </form>
+
+                    <form action="/dragao/dormir" method="post">
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-emerald-400 hover:bg-emerald-500 text-emerald-100 font-semibold rounded-2xl shadow">
+                            😴 Dormir
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+
+</body>
+
+<!-- ===== Atualiza a página a cada 1 segundo (passa o turno) ===== -->
+<script>
+    setInterval(() => {
+        fetch("/turno").then(() => location.reload());
+    }, 1000);
+</script>
+
+</html>
